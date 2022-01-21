@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopBetter.com | Spend less. Get Best</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--  js for ion-icon -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <!--<link href="./style.css" rel="=stylesheet" />-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        nav li span {
+            padding-left: 5px;
+        }
+
+        li a {
+            padding: 1px;
+            text-decoration: none;
+            color: #ff523b;
+        }
+
+        .cart ion-icon {
+            vertical-align: bottom;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+
+        .cart {
+            background-color: #ff523b;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+
+        .col-2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+
+        .btn:hover {
+            background: #563434;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .header .row {
+            margin-top: 70px;
+        }
+
+        .categories {
+            margin: 70px 0;
+        }
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .col-3 img {
+            width: 100%;
+        }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .products {
+            margin: 70px 0;
+        }
+
+        .col-4 {
+            flex-basis: 25%;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+        }
+
+        .col-4 img {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+
+        .title::after {
+            content: '';
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .col-4 p {
+            font-size: 14px;
+        }
+
+        .rating .fa {
+            color: #ff523b;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+        }
+
+        /*----------- footer ------------*/
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-col-2 img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-3,
+        .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .menu-icon {
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+
+        /*-------------- media query for menu ---------------*/
+
+        @media only screen and (max-width: 800px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /*-----------  all products page -------------*/
+
+        .row-2 {
+            justify-content: space-between;
+            margin: 100px auto 50px;
+        }
+
+        select {
+            border: 1px solid #ff523b;
+            padding: 5px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .page-btn {
+            margin: 0 auto 80px;
+        }
+
+        .page-btn span {
+            display: inline-block;
+            border: 1px solid #ff523b;
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .page-btn span:hover {
+            background: #ff523b;
+            color: #fff;
+        }
+
+        /*--------- single product details -----------*/
+
+        .single-product {
+            margin-top: 5px;
+        }
+
+        .single-product .col-2 img {
+            padding: 0;
+        }
+
+        .single-product .col-2 {
+            padding: 20px;
+        }
+
+        .single-product h4 {
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .single-product select {
+            display: block;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .single-product input {
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .single-product .fa {
+            color: #ff523b;
+            margin-left: 10px;
+        }
+
+        .small-img-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+
+        ul li {
+            font-size: small;
+            color: #555;
+            list-style-type: none;
+        }
+
+        /*-----------  Category Images   -------------*/
+
+        .card {
+            position: relative;
+            display: inline-block;
+        }
+
+        .card .img-top {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+
+        .card:hover .img-top {
+            cursor: pointer;
+            display: inline;
+        }
+
+        /*-----  media query for less than 600 screen size  ------*/
+        @media only screen and (max-width: 600px) {
+            .row {
+                text-align: center;
+            }
+
+            .col-2,
+            .col-3,
+            .col-4 {
+                flex-basis: 100%;
+            }
+
+            .single-product .row {
+                text-align: left;
+            }
+
+            .single-product .col-2 {
+                padding: 20px 0;
+            }
+
+            .single-product h1 {
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-black.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a class="cart" href="cart.html">
+                <ion-icon name="cart"></ion-icon><span>0</span>
+            </a>
+            <!--<a href="cart.html"><img src="images/cart.png" alt="" width="30px" height="30px"></a>-->
+            <img src="images/menu.png" class="menu-icon" alt="" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!------------ single product details  --------------->
+
+    <div class="small-container single-product">
+        <div class="row shop-item">
+            <div class="col-2">
+                <img src="images/product-18.webp" width="100%"
+                    alt="Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708" id="ProductImg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/product-18.webp" width="100%"
+                            alt="Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/Roadster/0cf6506c-ad0e-452f-84dc-e491ac7edab01570274183654-Roadster-Men-Black-Multi-Function-Analogue-and-Digital-Watch-5.webp"
+                            width="100%" alt="Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708"
+                            class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/Roadster/74480d3a-4a47-4f7c-99af-e444920755831570274183608-Roadster-Men-Black-Multi-Function-Analogue-and-Digital-Watch-6.webp"
+                            width="100%" alt="Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708"
+                            class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/Roadster/7f855517-7e2f-4691-a4ae-2d33c9ea69bf1570274183712-Roadster-Men-Black-Multi-Function-Analogue-and-Digital-Watch-3.webp"
+                            width="100%" alt="Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708"
+                            class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Home / Wristwatches</p>
+                <h1>Roadster</h1>
+                <p class="shop-item-title">Men Black Multi Function Analogue and Digital Watch MFB-PN-SM-1708</p>
+                <h4 class="shop-item-price">$269.00</h4>
+                <p>Quantity:</p>
+                <input type="number" value="1">
+                <a class="add-cart cart18 btn" href="#">Add To Cart</a>
+
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <ul>
+                    <li>Comes in a signature Roadster case</li>
+                    <li><b>Display:</b> Analogue and Digital</li>
+                    <li><b>Movement:</b> Quartz</li>
+                    <li><b>Power source:</b> Battery</li>
+                    <li><b>Dial style:</b> Solid round stainless steel dial</li>
+                    <li><b>Features:</b> Multi Function, Stopwatch, Chronograph</li>
+                    <li><b>Strap style:</b> Black regular, silicon strap with a tang closure</li>
+                    <li><b>Water resistance:</b> Water Resistant</li>
+                </ul>
+                <p>Size & Fit</p>
+                <ul>
+                    <li><b>Dial width:</b> 30 mm</li>
+                    <li><b>Strap Width:</b> 25 mm</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--------- title --------->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+
+    <!--------- products  ----------->
+
+    <div class="small_container">
+        <div class="row">
+            <div class="col-4 card">
+                <a href="BlackStainlessSteelWatch.html"><img src="images/product-8.jpg"
+                        alt="Suunto Series 7 Black Lime"></a>
+                <a href="BlackStainlessSteelWatch.html"><img
+                        src="images/MinimalistChronographBlackStainlessSteelWatch/FS5848_onwrist.jpg"
+                        alt="Suunto Series 7 Black Lime" class="img-top"></a>
+                <a href="BlackStainlessSteelWatch.html">
+                    <h4>Chronograph Stainless Steel Watch</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$169.00</p>
+                <a class="add-cart cart8 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="Gen6SmartwatchGreenCamoGrosgrain.html"><img src="images/product-9.jpg"
+                        alt="Gen 6 Smartwatch Green Camo Grosgrain"></a>
+                <a href="Gen6SmartwatchGreenCamoGrosgrain.html"><img
+                        src="images/Gen6SmartwatchGreenCamoGrosgrain/FTW4063_onwrist.jpg"
+                        alt="Gen 6 Smartwatch Green Camo Grosgrain" class="img-top"></a>
+                <a href="Gen6SmartwatchGreenCamoGrosgrain.html">
+                    <h4>Gen 6 Green Camo Grosgrain</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$229.00</p>
+                <a class="add-cart cart9 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="BoAT.html"><img src="images/Product-17.webp"
+                        alt="boAT Unisex Black Storm M Smart Watch"></a>
+                <a href="BoAT.html"><img
+                        src="images/Watch/87cd7b26-502f-4bc0-9e9e-2f20125b5ffc1618390165044-boAT-Unisex-Black-Storm-M-Smart-Watch-921618390164679-3.webp"
+                        alt="boAT Unisex Black Storm M Smart Watch" class="img-top"></a>
+                <a href="BoAT.html">
+                    <h4>boAT Black Smart Watch</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$201.00</p>
+                <a class="add-cart cart17 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="SuuntoWatch.html"><img src="images/product-21.jpg"
+                        alt="Suunto Series 7 Black Lime"></a>
+                <a href="SuuntoWatch.html"><img
+                        src="images/Suunto/Suunto-SUUNTO7-SS050379000_3.jpg"
+                        alt="Suunto Series 7 Black Lime" class="img-top"></a>
+                <a href="Roadster.html">
+                    <h4>Suunto Series 7 Black Lime</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <p>$559.00</p>
+                <a class="add-cart cart21 btn" href="#">Add To Cart</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-----------  footer ----------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android. Our ios mobile app is coming soon.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2022 - DammyBod Inc.</p>
+        </div>
+    </div>
+
+    <!----  js for toggle menu and product gallery   ---->
+    <script src="menu.js" type="text/javascript"></script>
+    <!--  js for cart -->
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>

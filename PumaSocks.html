@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopBetter.com | Spend less. Get Best</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--  js for ion-icon -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <!--<link href="./style.css" rel="=stylesheet" />-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        nav li span {
+            padding-left: 5px;
+        }
+
+        li a {
+            padding: 1px;
+            text-decoration: none;
+            color: #ff523b;
+        }
+
+        .cart ion-icon {
+            vertical-align: bottom;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+
+        .cart {
+            background-color: #ff523b;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+
+        .col-2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+
+        .btn:hover {
+            background: #563434;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .header .row {
+            margin-top: 70px;
+        }
+
+        .categories {
+            margin: 70px 0;
+        }
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .col-3 img {
+            width: 100%;
+        }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .products {
+            margin: 70px 0;
+        }
+
+        .col-4 {
+            flex-basis: 25%;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+        }
+
+        .col-4 img {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+
+        .title::after {
+            content: '';
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .col-4 p {
+            font-size: 14px;
+        }
+
+        .rating .fa {
+            color: #ff523b;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+        }
+
+        /*-------- offer ----------*/
+
+        .offer {
+            background: radial-gradient(#fff, #ffd6d6);
+            margin-top: 80px;
+            padding: 30px 0;
+        }
+
+        .col-2 .offer-img {
+            padding: 50px;
+        }
+
+        small {
+            color: #555;
+        }
+
+        /*-------- testimonial ----------*/
+
+        .testimonial {
+            padding-top: 100px;
+        }
+
+        .testimonial .col-3 {
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .testimonial .col-3 img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa.fa-quote-left {
+            font-size: 34px;
+            color: #ff523b;
+        }
+
+        .col-3 p {
+            font-size: 12px;
+            margin: 12px 0;
+            color: #777;
+        }
+
+        .testimonial .col-3 h3 {
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+        }
+
+        /*---------- brands ---------*/
+        .brands {
+            margin: 100px auto;
+        }
+
+        .col-5 {
+            width: 160px;
+        }
+
+        .col-5 img {
+            width: 100%;
+            cursor: pointer;
+            filter: grayscale(100%);
+        }
+
+        .col-5 img:hover {
+            filter: grayscale(0);
+        }
+
+        /*----------- footer ------------*/
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-col-2 img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-3,
+        .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .menu-icon {
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+
+        /*-------------- media query for menu ---------------*/
+
+        @media only screen and (max-width: 800px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /*-----------  all products page -------------*/
+
+        .row-2 {
+            justify-content: space-between;
+            margin: 100px auto 50px;
+        }
+
+        select {
+            border: 1px solid #ff523b;
+            padding: 5px;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        .page-btn {
+            margin: 0 auto 80px;
+        }
+
+        .page-btn span {
+            display: inline-block;
+            border: 1px solid #ff523b;
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .page-btn span:hover {
+            background: #ff523b;
+            color: #fff;
+        }
+
+        /*--------- single product details -----------*/
+
+        .single-product {
+            margin-top: 5px;
+        }
+
+        .single-product .col-2 img {
+            padding: 0;
+        }
+
+        .single-product .col-2 {
+            padding: 20px;
+        }
+
+        .single-product h4 {
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .single-product select {
+            display: block;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .single-product input {
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .single-product .fa {
+            color: #ff523b;
+            margin-left: 10px;
+        }
+
+        .small-img-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+
+        ul li {
+            font-size: small;
+            color: #555;
+            list-style-type: none;
+        }
+
+        /*-----------  Category Images   -------------*/
+
+        .card {
+            position: relative;
+            display: inline-block;
+        }
+
+        .card .img-top {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+
+        .card:hover .img-top {
+            cursor: pointer;
+            display: inline;
+        }
+
+        /*-----  media query for less than 600 screen size  ------*/
+        @media only screen and (max-width: 600px) {
+            .row {
+                text-align: center;
+            }
+
+            .col-2,
+            .col-3,
+            .col-4 {
+                flex-basis: 100%;
+            }
+
+            .single-product .row {
+                text-align: left;
+            }
+
+            .single-product .col-2 {
+                padding: 20px 0;
+            }
+
+            .single-product h1 {
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-black.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a class="cart" href="cart.html">
+                <ion-icon name="cart"></ion-icon><span>0</span>
+            </a>
+            <!--<a href="cart.html"><img src="images/cart.png" alt="" width="30px" height="30px"></a>-->
+            <img src="images/menu.png" class="menu-icon" alt="" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!------------ single product details  --------------->
+
+    <div class="small-container single-product">
+        <div class="row shop-item">
+            <div class="col-2">
+                <img src="images/product-24.webp" width="100%"
+                    alt="Adults Multicoloured Pack of 3 Solid Above Ankle Socks" id="ProductImg"
+                    class="shop-item-image">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/product-24.webp" width="100%"
+                            alt="Adults Multicoloured Pack of 3 Solid Above Ankle Socks" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/Puma Socks/31dbc4e2-a852-47ad-b491-5e979a389d681620315538013-3.jpg"
+                            width="100%" alt="Adults Multicoloured Pack of 3 Solid Above Ankle Socks" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/Puma Socks/850978ed-983c-44a6-9416-74f3c38a30d61620315537995-2.webp"
+                            width="100%" alt="Adults Multicoloured Pack of 3 Solid Above Ankle Socks" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/product-24.webp" width="100%"
+                            alt="Adults Multicoloured Pack of 3 Solid Above Ankle Socks" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Home / Socks</p>
+                <h1>PUMA</h1>
+                <p class="shop-item-title">Adults Multicoloured Pack of 3 Solid Above Ankle Socks</p>
+                <h4 class="shop-item-price">$95.98</h4>
+                <a href="" class="btn">One Size</a>
+                <input type="number" value="1">
+                <a class="add-cart cart24 btn" href="#">Add To Cart</a>
+
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <p><b>PRODUCT STORY:</b></p>
+                <ul>
+                    <li>We dont have to tell you how awesome our PUMA Sports Quarter socks are. Just ask anyone. The
+                        lightweight, breathable material, the flexible, foot-hugging design, or the perfect collar
+                        heights is everything you would ever want.
+                    </li>
+                </ul>
+                <br>
+                <p><b>DETAILS:</b></p>
+                <ul>
+                    <li>Includes 3 pairs</li>
+                    <li>Unisex fit</li>
+                    <li>Quarter crew silhouette</li>
+                    <li>Comfort toe seam</li>
+                    <li>Half Terry construction</li>
+                    <li>Ribbed collar for secure fit</li>
+                    <li>PUMA Wordmark branding at ankle</li>
+                    <li>PUMA Cat Logo branding at toe</li>
+                </ul>
+                <p><b>Material & Care</b></p>
+                <ul>
+                    <li>98% Polyester, 2% Spandex</li>
+                    <li>Hand Wash</li>
+                </ul><br>
+            </div>
+        </div>
+    </div>
+
+    <!--------- title --------->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+
+    <!--------- products  ----------->
+
+    <div class="small_container">
+        <div class="row">
+            <div class="col-4 card">
+                <a href="Reebok.html"><img src="images/product-7.jpg"
+                        alt="reebok-men-pack-of-3-assorted-ankle-length-socks"></a>
+                <a href="Reebok.html"><img src="images/Reebok/13d8d92a-d645-4636-a215-aa029832e00f1606128488395-3.jpg"
+                        alt="reebok-men-pack-of-3-assorted-ankle-length-socks" class="img-top"></a>
+                <a href="Reebok.html">
+                    <h4>Reebok-pack-of-assorted-socks</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$105.00</p>
+                <a class="add-cart cart7 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="HRXSocks.html"><img class="image" src="images/product-15.jpg"
+                        alt="Men Quarter length Pack of 3 Socks"></a>
+                <a href="HRXSocks.html"><img
+                        src="images/HRXSocks/438d91c6-227f-4558-9df3-8ba8482d07021538655468161-HRX-by-Hrithik-Roshan-Active-Men-Set-of-3-Padded-Ankle-Lengt-3.webp"
+                        alt="Men Quarter length Pack of 3 Socks" class="img-top"></a>
+                <a href="HRXSocks.html">
+                    <h4>Men Quarter length Pack of 3 Socks</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$86.00</p>
+                <a class="add-cart cart15 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="RednBlack.html"><img src="images/product-10.jpg" alt="Men Black & Red Outdoor Shoes"></a>
+                <a href="RednBlack.html"><img
+                        src="images/MenBlack&Red/468513cc-7ac6-4bbc-a3f5-63bc8a95ae0e1603366351845-HRX-by-Hrithik-Roshan-Men-Black--Red-Out-Back-Outdoor-Shoes--1.jpg"
+                        alt="Men Black & Red Outdoor Shoes" class="img-top"></a>
+                <a href="RednBlack.html">
+                    <h4>Men Black & Red Outdoor Shoes</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$99.00</p>
+                <a class="add-cart cart10 btn" href="#">Add To Cart</a>
+            </div>
+            <div class="col-4 card">
+                <a href="NikeAir.html"><img src="images/product-11.png" alt="Nike Air Zoom SuperRep 2"></a>
+                <a href="NikeAir.html"><img
+                        src="images/NikeAir/air-zoom-superrep-2-mens-hiit-class-shoes-tb3J0s (2).png"
+                        alt="Nike Air Zoom SuperRep 2" class="img-top"></a>
+                <a href="NikeAir.html">
+                    <h4>Men's Nike Air Zoom SuperRep 2</h4>
+                </a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$120.00</p>
+                <a class="add-cart cart11 btn" href="#">Add To Cart</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-----------  footer ----------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android. Our ios mobile app is coming soon.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2022 - DammyBod Inc.</p>
+        </div>
+    </div>
+
+    <!----  js for toggle menu and product gallery   ---->
+    <script src="menu.js" type="text/javascript"></script>
+    <!--  js for cart -->
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
