@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <title>About Us | ShopBetter.com. Spend less | Get Best</title>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--  js for ion-icon -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <!--<link href="./style.css" rel="=stylesheet" />-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav li {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        nav li span {
+            padding-left: 5px;
+        }
+
+        li a {
+            padding: 1px;
+            text-decoration: none;
+            color: #ff523b;
+        }
+
+        .cart ion-icon {
+            vertical-align: bottom;
+            font-size: 20px;
+            padding-right: 5px;
+        }
+
+        .cart {
+            background-color: #ff523b;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .col-2 {
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+
+        .col-2 h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+
+        .mySlides {
+            max-height: 500px;
+            display: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff523b;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+
+        .btn:hover {
+            background: #563434;
+        }
+
+        .header {
+            background: radial-gradient(#fff, #ffd6d6);
+        }
+
+        .header .row {
+            margin-top: 70px;
+        }
+
+        .categories {
+            margin: 70px 0;
+        }
+
+        .col-3 {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .col-3 img {
+            width: 100%;
+        }
+
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .products {
+            margin: 70px 0;
+        }
+
+        .col-4 {
+            flex-basis: 25%;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+        }
+
+        .col-4 img {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+
+        .title::after {
+            content: '';
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .col-4 p {
+            font-size: 14px;
+        }
+
+        .rating .fa {
+            color: #ff523b;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+        }
+
+        /*-------- offer ----------*/
+
+        .offer {
+            background: radial-gradient(#fff, #ffd6d6);
+            margin-top: 80px;
+            padding: 30px 0;
+        }
+
+        .col-2 .offer-img {
+            padding: 50px;
+        }
+
+        small {
+            color: #555;
+        }
+
+        /*----------- footer ------------*/
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-col-2 img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-3,
+        .footer-col-4 {
+            flex-basis: 12%;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .menu-icon {
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+        /*-------- testimonial ----------*/
+
+        .testimonial {
+            padding-top: 100px;
+        }
+
+        .testimonial .col-3 {
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 20px 50px 0px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .testimonial .col-3 img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa.fa-quote-left {
+            font-size: 34px;
+            color: #ff523b;
+        }
+
+        .col-3 p {
+            font-size: 12px;
+            margin: 12px 0;
+            color: #777;
+        }
+
+        .testimonial .col-3 h3 {
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+        }
+
+        /*---------- brands ---------*/
+        .brands {
+            margin: 100px auto;
+        }
+
+        .col-5 {
+            width: 160px;
+        }
+
+        .col-5 img {
+            width: 100%;
+            cursor: pointer;
+            filter: grayscale(100%);
+        }
+
+        .col-5 img:hover {
+            filter: grayscale(0);
+        }
+
+        /*-----------  Category Images   -------------*/
+
+        .card {
+            position: relative;
+            display: inline-block;
+        }
+
+        .card .img-top {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+
+        .card:hover .img-top {
+            cursor: pointer;
+            display: inline;
+        }
+
+
+        /*-------------- media query for menu ---------------*/
+
+        @media only screen and (max-width: 800px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /*-----  media query for less than 600 screen size  ------*/
+        @media only screen and (max-width: 600px) {
+            .row {
+                text-align: center;
+            }
+
+            .col-2,
+            .col-3,
+            .col-4 {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a class="cart" href="cart.html">
+                    <ion-icon name="cart"></ion-icon><span>0</span>
+                </a>
+                <img src="images/menu.png" class="menu-icon" alt="" onclick="menutoggle()">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Give Your Workout<br> A New Style!</h1>
+                    <p>Success isn't always about greatness. It's about consistency. Consistent <br> hard work gains
+                        success. Greatness will come.</p>
+                    <a href="#featured-prod" id="explore" class="btn">Explore Now &#8594;</a>
+                </div>
+                <div class="col-2 w3-content w3-section">
+                    <img class="mySlides" src="images/image1-min.png" alt="">
+                    <img class="mySlides" src="images/pngegg.png">
+                    <img class="mySlides" src="images/pngegg (3).png">
+                    <img class="mySlides" src="images/pngegg (2).png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------ featured categories ------>
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3 card">
+                    <img src="images/Screenshot (207).png" alt="About-Us">
+                    <img src="assets/Screenshot (105).png" class="img-top" alt="Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="aboutUs">
+        <div class="small-container">
+            <div class="row">
+                <h1><b>Who we are</b></h1>
+                <p>ShopBetter is Nigeria's number one online shopping destination where you can shop the widest
+                    selection of
+                    electronics, fashion, home appliances, kid's items and more in Nigeria and have them shipped
+                    directly to
+                    your home or office at your convenience! We offer free nationwide delivery, free returns and have
+                    several
+                    convenient payment options to choose from, either with your debit/credit cards or cash on delivery.
+                    With
+                    affordable prices and great products, ShopBetter lets you enjoy an awesome shopping experience with
+                    your
+                    order
+                    sent directly to your doorstep. No muss, no fuss, super convenience guaranteed.</p>
+                <br>
+                <p>We are constantly expanding our product range to include the fashion styles and new
+                    categories and we don't want you to miss out! Follow us on Facebook and Twitter to stay updated on
+                    the
+                    latest offers and ShopBetter news. Happy shopping!</p>
+                <br> <br> <br>
+                <h1><b>ShopBetter among DammyBod Inc.</b></h1>
+                <p>ShopBetter Nigeria belongs to DammyBod Incorporation which aims at supporting the evolution of the
+                    African online culture thanks to its 8 fast-growing ventures. In Nigeria, our partner ventures
+                    include Kaymu: The
+                    online marketplace where buyers meet sellers, Hellofood: The online food vendor, Carmudi: The Online
+                    car
+                    dealership, Lamudi: The online real-estate listing, Fast Taxi: Your Taxi is 1 Click Away and Jovago:
+                    The
+                    online hotel bookings</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!------ offer ------>
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="SmartBand.html"><img src="images/exclusive.png" class="offer-img"
+                            alt="Mi Smart Band 4"></a>
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on ShopBetter</p>
+                    <a href="SmartBand.html">
+                        <h1>Smart Band 4</h1>
+                    </a>
+                    <small>The Mi Small Band 4 features a 39.9% latger (than Mi Band 3) AMOLED color full-touch display
+                        with adjustable brightness, so everything is clear as it can be.</small><br>
+                    <a href="SmartBand.html" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------- Testimonial ------->
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>The best online sellers available on the net. They,ve really made the process of piurchasing
+                        goods online seemless.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="images/user-1.png" alt="">
+                    <h3>Sean Parker</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Their delivery services is the fastest I've seen. I got my order the same day I placed the order.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="images/user-2.png" alt="">
+                    <h3>Mike Smith</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>All I've bought from this online sellers are quality products. Their products really can stand
+                        the test of time.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="images/user-3.png" alt="">
+                    <h3>Mabel Joe</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------- brands -------->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="images/logo-godrej.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-oppo.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-coca-cola.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-paypal.png" alt="">
+                </div>
+                <div class="col-5">
+                    <img src="images/logo-philips.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------  footer ----------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android. Our ios mobile app is coming soon.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2022 - DammyBod Inc.</p>
+        </div>
+    </div>
+
+    <!--  js for image transition -->
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+
+    <!----  js for toggle menu    ---->
+    <script src="menu2.js" type="text/javascript"></script>
+    <!--  js for cart -->
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
